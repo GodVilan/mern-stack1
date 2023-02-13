@@ -7,6 +7,11 @@ app.get("/", function(req, res){
 	res.sendFile(__dirname+"/index.html");
 });
 
+app.get("/resume", function(req, res){
+	// res.send("I'm Srikanth Reddy");
+	res.sendFile(__dirname+"/resume.html");
+});
+
 app.listen(port, function(){
 	console.log("Server running on http://localhost:"+port);
 	console.log(`Server running on http://localhost:${port}`);
