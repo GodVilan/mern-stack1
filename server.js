@@ -10,17 +10,14 @@ const options = {
 }
 app.use(express.static("public",options));
 app.get("/", function(req, res){
-	// res.send("I'm Srikanth Reddy");
 	res.sendFile(__dirname+"/index.html");
 });
 
 app.get("/resume", function(req, res){
-	// res.send("I'm Srikanth Reddy");
 	res.sendFile(__dirname+"/resume.html");
 });
 
 app.get("/card", function(req, res){
-	// res.send("I'm Srikanth Reddy");
 	res.sendFile(__dirname+"/card.html");
 });
 mongoose.set('strictQuery', true);
