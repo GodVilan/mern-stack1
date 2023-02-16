@@ -36,7 +36,23 @@ mongoose.connect(process.env.MONGO_CONNECTION_STRING,{},function (err){
 		// 		console.log(res);
 		// 	}
 		// });
-		userLib.updateUser(function(err,result){
+		// userLib.createUser({userName: "beingzero", yearOfGraduation: 2025},function(err,result){
+		// 	if(err){
+		// 		console.error(err);
+		// 	}
+		// 	else{
+		// 		console.log(result);
+		// 	}
+		// });
+		// userLib.updateUser(function(err,result){
+		// 	if(err){
+		// 		console.error(err);
+		// 	}
+		// 	else{
+		// 		console.log(result);
+		// 	}
+		// });
+		userLib.deleteUser("Srikanth Reddy",function(err,result){
 			if(err){
 				console.error(err);
 			}
@@ -44,6 +60,23 @@ mongoose.connect(process.env.MONGO_CONNECTION_STRING,{},function (err){
 				console.log(result);
 			}
 		});
+		// userLib.getUserByFilter({userName: "Srikanth Reddy"}, function(err,result){
+		// 	if(err){
+		// 		console.error(err);
+		// 	}
+		// 	else{
+		// 		console.log(result);
+		// 	}
+		// });
+		// userLib.getAllUsers(function(err,result){
+		// 	if(err){
+		// 		console.error(err);
+		// 	}
+		// 	else{
+		// 		console.log(result);
+		// 	}
+		// });
+
 		app.listen(port, function(){
 			console.log("Server running on http://localhost:"+port);
 			console.log(`Server running on http://localhost:${port}`);
