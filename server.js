@@ -28,12 +28,20 @@ mongoose.connect(process.env.MONGO_CONNECTION_STRING,{},function (err){
 	else{
 		console.log("DB Connected");
 		// TODO: donot create user if atleast 1 user exist int the table
-		userLib.createFirstUser(function(err,res){
+		// userLib.createFirstUser(function(err,res){
+		// 	if(err){
+		// 		// console.error(err);
+		// 	}
+		// 	else{
+		// 		console.log(res);
+		// 	}
+		// });
+		userLib.updateUser(function(err,result){
 			if(err){
-				// console.error(err);
+				console.error(err);
 			}
 			else{
-				console.log(res);
+				console.log(result);
 			}
 		});
 		app.listen(port, function(){
