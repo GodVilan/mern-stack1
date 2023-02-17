@@ -14,11 +14,17 @@ app.get("/", function(req, res){
 });
 
 app.get("/resume", function(req, res){
-	res.sendFile(__dirname+"/resume.html");
+	res.sendFile(__dirname+"/public/resume.html");
 });
 
 app.get("/card", function(req, res){
-	res.sendFile(__dirname+"/card.html");
+	res.sendFile(__dirname+"/public/card.html");
+});
+app.get("/weather", function(req, res){
+	res.sendFile(__dirname+"/weather.html");
+});
+app.get("/about", function(req, res){
+	res.sendFile(__dirname+"/public/about.html");
 });
 mongoose.set('strictQuery', true);
 mongoose.connect(process.env.MONGO_CONNECTION_STRING,{},function (err){

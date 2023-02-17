@@ -1,115 +1,66 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="server.css">
-    <h1>SRIKANTH REDDY NANDIREDDY</h1>
-    <style>
-        table,
-        th,
-        td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0694a8c4d0.js" crossorigin="anonymous"></script>
+    <title>Resume</title>
 </head>
 <style>
-    .header{
-        background-color: lightblue;
+    @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #fff;
+        /* background-image: url("/background.jpeg");
+        background-repeat: no-repeat; */
+    }
+    .bio{
+        width: 350px;
+        height: 500px;
+        border-radius: 25px;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(45deg #fff #00FFFF);
+    }
+    .imgb{
+        position: absolute;
+        left: 50%;
+        top: -50px;
+        transform: translateX(-50%);
+        width: 150px;
+        height: 150px;
+        background: #fff;
+        border-radius: 100px;
+        border-start-end-radius: 100px;
+        box-shadow: 0 15px 50px rgba(0,0,0,0.35);
+        overflow: hidden;
+        transition: 0.5s;
     }
 </style>
 <body>
-<center>
-    <div class="header">
-        <p>+91-9014075836</p>
-        <p>srikanthreddynandireddy@gmail.com</p>
-        <p>https://www.linkedin.com/in/srikanth-reddy-nandireddy-155793231</p>
-        <p>https://github.com/GodVilan</p>
-        <p>https://leetcode.com/20h51a0570/</p>
+    <div class="bio">
+        <img class = "imgb" src = "mypic.jpg" alt="loading">
+        <div class = "info">
+            <h2>Srikanth Reddy Nandireddy<br><span>Engineer, Coding Enthusiast</span></h2>
+            <ul>
+                <li><a><i class="fa-solid fa-phone"></i> +91 90140 75836</a></li>
+                <li><a><i class="fa-brands fa-google"></i> srikanthreddynandireddy@gmail.com</a></li>                
+                <li><a><i class="fa-brands fa-linkedin"></i> https://www.linkedin.com/in/srikanth-reddy-nandireddy-155793231</a></li>  
+                <li><a><i class="fa-brands fa-github"></i> https://github.com/GodVilan</a></li>
+                <li><a><i class="fa-solid fa-location-dot"></i> Hyderabad, Telangana</a></li>                
+            </ul>
+        </div>
     </div>
-    <div class="qulaification">
-        <h4>ACADEMIC QUALIFICATIONS</h4>
-        <table>
-            <tr>
-                <th>Degree / certificates</th>
-                <th>Institute</th>
-                <th>Specialization</th>
-                <th>Board / University</th>
-                <th>Year</th>
-                <th>Percentage/GPA</th>
-            </tr>
-            <tr>
-                <td>B Tech CSE</td>
-                <td>CMR College of Engineering and Technology</td>
-                <td>Computer Science and Engineering</td>
-                <td>JNTUH</td>
-                <td>2020-2024</td>
-                <td>9.33</td>
-            </tr>
-            <tr>
-                <td>12th</td>
-                <td>Resonance Junior College</td>
-                <td>MPC</td>
-                <td>CBSE</td>
-                <td>2018-2020</td>
-                <td>98%</td>
-            </tr>
-            <tr>
-                <td>10th</td>
-                <td>Rainbow School</td>
-                <td>-</td>
-                <td>SSC</td>
-                <td>2017-2018</td>
-                <td>9.5</td>
-            </tr>
-        </table>
-    </div>
-    <br />
-    <div>
-        <h4>TECHNICAL SKILLS</h4>
-        <ul>
-            <li> Languages : C, C++, Python</li>
-            <li> Operating Systems : Windows, Ubuntu</li>
-            <li> Web Development : Html, CSS</li>
-            <!-- <li> Miscellaneous tools : Heroku, Git </li> -->
-
-        </ul>
-    </div>
-    <div>
-        <h4>PROJECTS</h4>
-        <h4>ChatBot Song Recommender System</h4>
-        <p>Mini Project-I/CMRCET</p>
-        <p>A formal ChatBot along with song recommendation Tech stack: HTML, Python</p>
-    </div>
-    <div>
-        <h4>Achievements</h4>
-        <ul>
-            <li>District 4th Rank in Olympiad 2017
-            </li>
-            <li>Qualified For Round 3 in IICC Championship</li>
-        </ul>
-    </div>
-    <div>
-        <h4> EXPERIENCE</h4>
-        JULY 2022
-        User Testing Intern At Hutouch
-    </div>
-
-    <div>
-        <h4>STRENGTHS</h4>
-        <ul>
-            <li>Hard working</li>
-            <li> Confidence</li>
-            <li>Motivator</li>
-        </ul>
-    </div>
-    <h4>PERSONAL DETAILS</h4>
-    <ul>
-        <li>Date of Birth : Aug 24th 2002</li>
-        <li>Languages : English, Hindi, Telugu</li>
-        <li>Interests and Activities : Reading, Listening Music</li>
-    </ul>
-</center>
 </body>
-
 </html>

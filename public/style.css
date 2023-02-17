@@ -23,7 +23,7 @@
             box-shadow: 0 35px 80px rgba(0,0,0,0.15);
         }
         .layout:hover{
-            height: 400px;
+            height: 600px;
         }
         .imgb{
             position: absolute;
@@ -66,10 +66,10 @@
             text-align: center;
             width: 100%;
             transition: 0.5s;
-            transform: translateY(100px);
+            transform: translateY(250px);
         }
         .layout:hover .content .details{
-            transform: translateY(-20px);
+            transform: translateY(-50px);
         }
         .layout .content .details h1{
             font-size: 1em;
@@ -83,14 +83,20 @@
             font-weight: 500;
             opacity: 0.5;
         }
-        .layout .content .details .action button{
-            padding: 10px 30px;
-            border-radius: 5px;
-            border: none;
-            outline: none;
-            font-size: 1em;
-            font-weight: 500;
-            cursor: pointer;
-            background: #5fff9f;
-            color: #000;
+        table{
+            height: 200px;
+            width: 380px;
         }
+        table, td, th {
+            border: 2px solid black;
+            color: maroon;
+        }
+        
+        table, td, th {
+            border-collapse: collapse;
+            /* width: 100%; */
+        }
+        /* .layout .content .details .action table {
+            color: red;
+            transition: 0.5s;
+        } */

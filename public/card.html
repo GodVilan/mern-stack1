@@ -157,51 +157,51 @@
                 </div>
                 <br>
                 <div class = "action1">
-                    <button onclick="toggleUser()">Switch User</button>
+                    <button id="toggle">Switch User</button>
                 </div>
             </div>
         </div>
     </div>
     <!-- <button onclick="toggleUser()">Click</button> -->
-    <script>
-        const userOne = {
-            name: "Srikanth Reddy",
-            bio: "Engineer, Coding Enthusiast",
-            posts: "200",
-            followers: "200k",
-            following: "150",
-            image: "/mypic.jpg",
-        }
-        const userTwo = {
-            name: "Havish Reddy",
-            bio: "Little Master",
-            posts: "100",
-            followers: "100k",
-            following: "100",
-            image: "/havi.jpg",
-        }
-        let currentIsMe = false;
-        let displayUser = userOne;
-        let userName = document.getElementById("userName");
-        let userImage = document.getElementById("userImage");
-        let posts = document.getElementById("posts");
-        let followers = document.getElementById("followers");
-        let following = document.getElementById("following");
-        let toggleUser = function() {
-            if(currentIsMe){
-                displayUser = userTwo;
-                currentIsMe = false;
-            }
-            else{
-                displayUser = userOne;
-                currentIsMe = true;
-            }
-            userName.innerHTML = displayUser.name + "<br>" + "<span>" + displayUser.bio + "</span>";
-            userImage.src = displayUser.image;
-            posts.innerHTML = displayUser.posts + "<br>" + "<span>" + "Posts" + "</span>";
-            followers.innerHTML = displayUser.followers + "<br>" + "<span>" + "Followers" + "</span>";
-            following.innerHTML = displayUser.following + "<br>" + "<span>" + "Following" + "</span>";
-        }
+    <script src="script.js">
+        // const userOne = {
+        //     name: "Srikanth Reddy",
+        //     bio: "Engineer, Coding Enthusiast",
+        //     posts: "200",
+        //     followers: "200k",
+        //     following: "150",
+        //     image: "/mypic.jpg",
+        // }
+        // const userTwo = {
+        //     name: "Havish Reddy",
+        //     bio: "Little Master",
+        //     posts: "100",
+        //     followers: "100k",
+        //     following: "100",
+        //     image: "/havi.jpg",
+        // }
+        // let currentIsMe = false;
+        // let displayUser = userOne;
+        // let userName = document.getElementById("userName");
+        // let userImage = document.getElementById("userImage");
+        // let posts = document.getElementById("posts");
+        // let followers = document.getElementById("followers");
+        // let following = document.getElementById("following");
+        // let toggleUser = function() {
+        //     if(currentIsMe){
+        //         displayUser = userTwo;
+        //         currentIsMe = false;
+        //     }
+        //     else{
+        //         displayUser = userOne;
+        //         currentIsMe = true;
+        //     }
+        //     userName.innerHTML = displayUser.name + "<br>" + "<span>" + displayUser.bio + "</span>";
+        //     userImage.src = displayUser.image;
+        //     posts.innerHTML = displayUser.posts + "<br>" + "<span>" + "Posts" + "</span>";
+        //     followers.innerHTML = displayUser.followers + "<br>" + "<span>" + "Followers" + "</span>";
+        //     following.innerHTML = displayUser.following + "<br>" + "<span>" + "Following" + "</span>";
+        // }
 
 
     </script>
