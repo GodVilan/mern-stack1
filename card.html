@@ -26,12 +26,12 @@
         position: absolute;
         width: 350px;
         height: 190px;
-        background: #fff;
+        background: #FFFAFA;
         border-radius: 25px;
         box-shadow: 0 35px 80px rgba(0,0,0,0.15);
     }
     .card:hover{
-        height: 450px;
+        height: 490px;
     }
     .imgb{
         position: absolute;
@@ -48,8 +48,8 @@
         transition: 0.5s;
     }
     .card:hover .imgb{
-        width: 350px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
     }
     .imgb img{
         position: absolute;
@@ -73,16 +73,17 @@
         text-align: center;
         width: 100%;
         transition: 0.5s;
-        transform: translateY(150px);
+        transform: translateY(250px);
     }
     .card:hover .content .details{
-        transform: translateY(0px);
+        transform: translateY(-20px);
     }
     .card .content .details h2{
         font-size: 1.25em;
         font-weight: 600;
         color: #555;
         line-height: 1.2em;
+        transform: translateY(-20px);
     }
     .card .content .details h2 span{
         font-size: 0.75em;
@@ -120,32 +121,89 @@
         color: #fff;
         cursor: pointer;
     }
+    .card .content .details .action1 button{
+        padding: 10px 30px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        font-size: 1em;
+        font-weight: 500;
+        background: #800080;
+        color: #fff;
+        cursor: pointer;
+    }
     .card .content .details .action button:nth-child(2){
         border: 1px solid #999;
         color: #999;
         background: #fff;
     }
-
 </style>
 <body>
     <div class = "card">
         <div class="imgb">
-            <img src = "havi.jpg" alt="mypic">
+            <img id="userImage" src = "havi.jpg" alt="mypic">
         </div>
         <div class = "content">
             <div class = "details">
-                <h2>Havish Reddy<br><span>Little Master</span></h2>
+                <h2 id = "userName">Havish Reddy<br><span>Little Master</span></h2>
                 <div class = "data">
-                    <h3>100<br><span>Posts</span></h3>
-                    <h3>100k<br><span>Followers</span></h3>
-                    <h3>100<br><span>Following</span></h3>
+                    <h3 id = "posts">100<br><span>Posts</span></h3>
+                    <h3 id = "followers">100k<br><span>Followers</span></h3>
+                    <h3 id = "following">100<br><span>Following</span></h3>
                 </div>
                 <div class = "action">
                     <button>Follow</button>
                     <button>Message</button>
                 </div>
+                <br>
+                <div class = "action1">
+                    <button onclick="toggleUser()">Switch User</button>
+                </div>
             </div>
         </div>
     </div>
+    <!-- <button onclick="toggleUser()">Click</button> -->
+    <script>
+        const userOne = {
+            name: "Srikanth Reddy",
+            bio: "Engineer, Coding Enthusiast",
+            posts: "200",
+            followers: "200k",
+            following: "150",
+            image: "/mypic.jpg",
+        }
+        const userTwo = {
+            name: "Havish Reddy",
+            bio: "Little Master",
+            posts: "100",
+            followers: "100k",
+            following: "100",
+            image: "/havi.jpg",
+        }
+        let currentIsMe = false;
+        let displayUser = userOne;
+        let userName = document.getElementById("userName");
+        let userImage = document.getElementById("userImage");
+        let posts = document.getElementById("posts");
+        let followers = document.getElementById("followers");
+        let following = document.getElementById("following");
+        let toggleUser = function() {
+            if(currentIsMe){
+                displayUser = userTwo;
+                currentIsMe = false;
+            }
+            else{
+                displayUser = userOne;
+                currentIsMe = true;
+            }
+            userName.innerHTML = displayUser.name + "<br>" + "<span>" + displayUser.bio + "</span>";
+            userImage.src = displayUser.image;
+            posts.innerHTML = displayUser.posts + "<br>" + "<span>" + "Posts" + "</span>";
+            followers.innerHTML = displayUser.followers + "<br>" + "<span>" + "Followers" + "</span>";
+            following.innerHTML = displayUser.following + "<br>" + "<span>" + "Following" + "</span>";
+        }
+
+
+    </script>
 </body>
 </html>
