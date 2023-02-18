@@ -27,18 +27,11 @@
             max-width: 400px;
             border-radius: 5%;
         }
-        .main-container .icon{
+        .main-container .container-fluid{
             position:absolute;
-            top:20px;
-            right: 20px;
+            top:40px;
+            right: 40px;
             width: 40px;
             cursor: pointer;
             border-radius: 5%;
-        }
-        .icon:hover{
-            background-color: orange;
-        }
-        nav{
-            flex: 1;
-            text-align: right;
         }
