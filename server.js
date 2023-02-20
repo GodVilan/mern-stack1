@@ -3,6 +3,7 @@ const userLib = require("./backend/lib/userLib");
 const todoLib = require("./backend/lib/todoLib");
 const mongoose = require("mongoose");
 const express = require('express');
+const { request } = require("express");
 const app = express();
 const port = process.env.PORT || 5010;
 const options = {
@@ -11,14 +12,45 @@ const options = {
 }
 
 app.use(express.static("frontend"));
+app.use(express.json());
 app.use(express.static("public",options));
 
 app.get("/api/todos",function(req,res){
-	res.json([
-		{name:"Srikanth Reddy",isCompleted:true},
-		{name:"Havish Reddy",isCompleted:false}
-	])
+	todoLib.getAllTodos(function(err, todos){
+		if(err){
+			res.json({status: "error", message: err, data: null});
+		}
+		else{
+			res.json({status: "success", data: todos});
+		}
+	});
 });
+
+app.post("/api/todos", function(req, res){
+	const todo = req.body;
+	todoLib.createTodo(todo, function(err, dbtodo){
+		if(err){
+			res.json({status: "error", message: err, data: null});
+		}
+		else{
+			res.json({status: "success", data: dbtodo});
+		}
+	});
+});
+
+app.put(("/api/todos/:todoid"),function(req,res){
+	const todo = req.body;
+	const todoid = req.params.todoid;
+	todoLib.updateTodoById(todoid, todo, function(err, dbtodo){
+		if(err){
+			res.json({status: "error", message: err, data: null});
+		}
+		else{
+			res.json({status: "success", data: dbtodo});
+		}
+	});
+});
+
 app.get("/", function(req, res){
 	res.sendFile(__dirname+"/frontend/html/index.html");
 });
@@ -46,14 +78,9 @@ mongoose.connect(process.env.MONGO_CONNECTION_STRING,{},function (err){
 	}
 	else{
 		console.log("DB Connected");
-		// todoLib.createFirstTodo(function(err,res){
-		// 	if(err){
-		// 		console.error(err);
-		// 	}
-		// 	else{
-		// 		console.log(res);
-		// 	}
-		// });
+
+
+
 		// todoLib.createTodo({title: "nithin vp"}, function(err,res){
 		// 	if(err){
 		// 		console.error(err);

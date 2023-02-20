@@ -1,3 +1,4 @@
+const { default: mongoose } = require("mongoose");
 const todoModel = require("../models/todoModel");
 
 /*
@@ -9,19 +10,6 @@ const todoModel = require("../models/todoModel");
 6. DeleteTodoById
 */
 
-module.exports.createFirstTodo = async function(callback){
-    try{
-        var todo = {
-            title: "Playing",
-        };
-        var newTodo = new todoModel(todo);
-        var result = await newTodo.save();
-        callback(null,result);
-    }
-    catch(err){
-        callback(err,null);
-    }
-}
 module.exports.createTodo = async function(todo,callback){
     try{
         var newTodo = new todoModel(todo);
@@ -44,8 +32,8 @@ module.exports.getAllTodos = async function(callback){
 
 module.exports.getTodosByQuery = async function(query,callback){
     try{
-        var todo = await todoModel.find(query);
-        callback(null,todo);
+        var todos = await todoModel.find(query);
+        callback(null,todos);
     }
     catch(err){
         callback(err,null);
@@ -62,15 +50,28 @@ module.exports.getSingleTodoById = async function(id,callback){
     }
 }
 
-// module.exports.updateTodoById = async function(id,data,callback){
-//     try{
-//         var todo = {
-//             _id: id,
-//         };
-//         var result = await todoModel.updateOne(todo,data);
-//         callback(null,result);
-//     }
-//     catch(err){
-//         callback(err,null);
-//     }
-// }
+module.exports.updateTodoById = async function(id,data,callback){
+    try{
+        var todo = {
+            _id: new mongoose.Types.ObjectId(id),
+        };
+        var result = await todoModel.updateOne(todo,data);
+        callback(null,result);
+    }
+    catch(err){
+        callback(err,null);
+    }
+}
+
+module.exports.deleteTodoById = async function(id,callback){
+    try{
+        var todo = {
+            _id: id,
+        };
+        var result = await todoModel.updateOne(todo,{isDeleted: true});
+        callback(null,result);
+    }
+    catch(err){
+        callback(err,null);
+    }
+}
