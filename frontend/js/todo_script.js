@@ -2,6 +2,25 @@ console.log("Hello From JS");
 
 document.getElementById("loader").style.display = "block";
 
+const inputBox = document.getElementById("inputBox");
+inputBox.addEventListener("keydown", function(event){
+    if(event.keyCode == 13){
+        createTodo(inputBox.value);
+    }
+});
+
+async function createTodo(text){
+    await fetch("/api/todos", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({title: text})});
+}
+
+async function getAllTodos(){
+    const todos = await fetch("/api/todos");
+    const todolist = await todos.json();
+    // alert(JSON.stringify(todolist));
+    
+}
+
+getAllTodos();
 
 fetch("/api/todos")
     .then(function(response){
@@ -28,4 +47,5 @@ function setTheme(){
     }
     light = !light;
 }
+
 

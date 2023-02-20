@@ -51,6 +51,18 @@ app.put(("/api/todos/:todoid"),function(req,res){
 	});
 });
 
+app.delete(("/api/todos/:todoid"),function(req,res){
+	const todoid = req.params.todoid;
+	todoLib.deleteTodoById(todoid, function(err,dbtodo){
+		if(err){
+			res.json({status: "error", message: err, data: null});
+		}
+		else{
+			res.json({status: "success", data: dbtodo});
+		}
+	});
+});
+
 app.get("/", function(req, res){
 	res.sendFile(__dirname+"/frontend/html/index.html");
 });
