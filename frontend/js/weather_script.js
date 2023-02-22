@@ -17,7 +17,7 @@ function getWeatherReport(city) {
         alert("Please Enter City Name!!");
         return;
     }
-    let reqCity = sCity
+    let reqCity = sCity;
     //  https://api.openweathermap.org/data/2.5/weather?q=cityName&appid=eb7a2d4a5a9b284fe54b7bb547238443&unit=metric
     fetch(`${weatherApi.baseUrl}?q=${reqCity}&appid=${weatherApi.key}&units=metric`)
         .then(function (response) { return response.json() })
