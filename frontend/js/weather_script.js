@@ -12,8 +12,14 @@ searchBox.addEventListener("keypress", function(event){
 
 function getWeatherReport(city) {
 
+    const sCity = city ?? searchBox.value;
+    if(!sCity){
+        alert("Please Enter City Name!!");
+        return;
+    }
+    let reqCity = sCity
     //  https://api.openweathermap.org/data/2.5/weather?q=cityName&appid=eb7a2d4a5a9b284fe54b7bb547238443&unit=metric
-    fetch(`${weatherApi.baseUrl}?q=${city}&appid=${weatherApi.key}&units=metric`)
+    fetch(`${weatherApi.baseUrl}?q=${reqCity}&appid=${weatherApi.key}&units=metric`)
         .then(function (response) { return response.json() })
         .then(function (response) {
             showWeatherReport(response);
@@ -94,32 +100,32 @@ function manageImage(weatherType) {
     }
 }
 
-const toggle = document.getElementById('toggleDark');
-const body = document.getElementById('cont');
-const cbody = document.getElementById('cbody');
-const accordionExample = document.getElementById('accordionExample');
+// const toggle = document.getElementById('toggleDark');
+// const body = document.getElementById('cont');
+// const cbody = document.getElementById('cbody');
+// const accordionExample = document.getElementById('accordionExample');
 
-toggle.addEventListener('click', function(){
-    this.classList.toggle('bi-moon');
-    if(this.classList.toggle('bi-moon-fill')){
-        body.style.background = 'white';
-        body.style.color = 'black';
-        body.style.transition = '2s';
-        cbody.style.color = 'black';
-        cbody.style.transition = '2s';
-        accordionExample.style.color = 'black';
-        accordionExample.style.transition = '2s';
-    }
-    else{
-        body.style.background = 'black';
-        body.style.color = 'white';
-        body.style.transition = '2s';
-        cbody.style.color = 'white';
-        cbody.style.transition = '2s';
-        accordionExample.style.color = 'white';
-        accordionExample.style.transition = '2s';
-    }
-});
+// toggle.addEventListener('click', function(){
+//     this.classList.toggle('bi-moon');
+//     if(this.classList.toggle('bi-moon-fill')){
+//         body.style.background = 'white';
+//         body.style.color = 'black';
+//         body.style.transition = '2s';
+//         cbody.style.color = 'black';
+//         cbody.style.transition = '2s';
+//         accordionExample.style.color = 'black';
+//         accordionExample.style.transition = '2s';
+//     }
+//     else{
+//         body.style.background = 'black';
+//         body.style.color = 'white';
+//         body.style.transition = '2s';
+//         cbody.style.color = 'white';
+//         cbody.style.transition = '2s';
+//         accordionExample.style.color = 'white';
+//         accordionExample.style.transition = '2s';
+//     }
+// });
 
 var light = true;
 function setTheme(){
