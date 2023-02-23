@@ -44,7 +44,7 @@ async function createTodo(text){
 async function getAllCompletedTodos() {
     try {
 
-        let completedTodos = await fetch("/api/todos?isCompleted=true")
+        let completedTodos = await fetch("/api/todos/completed");
         completedTodos = await completedTodos.json();
         const completedTodosList = document.getElementById("completedTodosList");
         completedTodosList.innerHTML = null
@@ -69,25 +69,23 @@ async function getAllCompletedTodos() {
 async function getAllDeletedTodos() {
     try {
 
-        let deletedTodos = await fetch("/api/todos?isDeleted=true")
+        let deletedTodos = await fetch("/api/todos/deleted")
         deletedTodos = await deletedTodos.json();
         const deletedTodosList = document.getElementById("deletedTodosList");
-        deletedTodosList.innerHTML = null
-        deletedCount = deletedTodos.data.length
+        deletedTodosList.innerHTML = null;
+        deletedCount = deletedTodos.data.length;
         document.getElementById("deletedCount").innerHTML = deletedCount;
         deletedTodos.data.forEach((el, index) => {
             let listItem = document.createElement("li")
-            listItem.classList.add("list-group-item");
+            listItem.classList.add("list-group");
             let textNode = document.createTextNode(el.title);
             listItem.appendChild(textNode);
             listItem.classList.add("text-center")
             deletedTodosList.appendChild(listItem);
-        })
-
-
-
-
-    } catch (err) {
+            
+        });
+    }
+    catch (err) {
         console.log(err);
     }
 }
@@ -159,7 +157,7 @@ async function getAllTodos(){
 
 async function deleteTodo(id) {
     try {
-        await fetch(`/api/todos/${_id}`, {
+        await fetch(`/api/todos/${id}`, {
             method: "DELETE",
         })
         getAllDeletedTodos();
@@ -170,7 +168,7 @@ async function deleteTodo(id) {
 }
 
 async function setChecked(id) {
-    const item = document.querySelector(`[data-name="${_id}"]`);
+    const item = document.querySelector(`[data-name="${id}"]`);
     let isCrossed  = item.classList.contains("crossed");
     if (isCrossed) {
         
@@ -178,7 +176,7 @@ async function setChecked(id) {
         let data = {
             isCompleted : false
         }
-        await fetch(`/api/todos/${_id}`, {
+        await fetch(`/api/todos/${id}`, {
             method: "PUT",
             body : JSON.stringify(data),
             headers: {
@@ -186,8 +184,6 @@ async function setChecked(id) {
             },
         })
         getAllCompletedTodos();
-
-
 
     } else {
         item.classList.add("crossed")
