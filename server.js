@@ -92,7 +92,7 @@ app.get("/card", function(req, res){
 app.get("/weather", function(req, res){
 	res.sendFile(process.cwd()+"/frontend/html/weather.html");
 });
-app.get("/todolist", function(req, res){
+app.get("/todo", function(req, res){
 	res.sendFile(process.cwd()+"/frontend/html/todolist.html");
 });
 app.get("/about", function(req, res){
