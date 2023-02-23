@@ -159,10 +159,10 @@ async function getAllTodos(){
 
 async function deleteTodo(id) {
     try {
-        await fetch(`/api/todos/${id}`, {
+        await fetch(`/api/todos/${_id}`, {
             method: "DELETE",
         })
-        getAllTodos();
+        getAllDeletedTodos();
 
     } catch (err) {
         console.log(err);
@@ -170,7 +170,7 @@ async function deleteTodo(id) {
 }
 
 async function setChecked(id) {
-    const item = document.querySelector(`[data-name="${id}"]`);
+    const item = document.querySelector(`[data-name="${_id}"]`);
     let isCrossed  = item.classList.contains("crossed");
     if (isCrossed) {
         
@@ -178,7 +178,7 @@ async function setChecked(id) {
         let data = {
             isCompleted : false
         }
-        await fetch(`/api/todos/${id}`, {
+        await fetch(`/api/todos/${_id}`, {
             method: "PUT",
             body : JSON.stringify(data),
             headers: {
