@@ -4,23 +4,130 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/0694a8c4d0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/resume_style.css">k
-    <title>Resume</title>
+    <title>My_portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/resume_style.css">
 </head>
 <body>
-    <div class="bio">
-        <img class = "imgb" src = "/images/mypic.jpg" alt="loading">
-        <div class = "info">
-            <h2>Srikanth Reddy Nandireddy<br><span>Engineer, Coding Enthusiast</span></h2>
-            <ul>
-                <li><a><i class="fa-solid fa-phone"></i> +91 90140 75836</a></li>
-                <li><a><i class="fa-brands fa-google"></i> srikanthreddynandireddy@gmail.com</a></li>                
-                <li><a><i class="fa-brands fa-linkedin"></i> https://www.linkedin.com/in/srikanth-reddy-nandireddy-155793231</a></li>  
-                <li><a><i class="fa-brands fa-github"></i> https://github.com/GodVilan</a></li>
-                <li><a><i class="fa-solid fa-location-dot"></i> Hyderabad, Telangana</a></li>                
-            </ul>
+    <header>
+        <div class="container">
+        <nav class="flex items-center justify-between">
+            <div class="left flex items-center">
+                <div class="branding">
+                </div>
+                <div>
+                    <a href="#">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                </div>
+            </div>
+            <div class="right">
+                <a href="#contact"><button class="btn btn-primary">Contact</button></a>
+            </div>
+        </nav>
+        <div class="hero flex items-center justify-between">
+            <div class="left flex-1 flex justify-center">
+            </div>
+            <div class="right flex-1">
+                <h6>SRIKANTH REDDY NANDIREDDY</h6>
+            </div>
         </div>
     </div>
+    </header>
+
+    <section id="about" class="about">
+        <div class="container flex items-center">
+            <div class="flex-1">
+                <img class="about-me-img mypic" src="/images/mypic.jpg" alt="">
+            </div>
+            <div class="flex-1">
+                <h1>About <span>Me</span></h1>
+                <h3>Hello! YOU ARE READING ABOUT SRIKANTH REDDY NANDIREDDY.</h3>
+                <p> I am pursuing my B.Tech graduation AT CMR College of Engineering & Technology. </p>
+            </div>
+            <div class="social">
+                <a href="#"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt=""></a>
+                <a href="#"><img src="https://cdn.freebiesupply.com/logos/large/2x/linkedin-icon-1-logo-png-transparent.png "height="50" alt=""></a>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="skills">
+        <div class="container">
+            <h1 class="section-heading"><span>My </span>Skills</h1>
+            <div class="card-wrapper">  
+                <div class="card">
+                    <h2>C</h2>
+                    <p>(Advanced)</p>
+                </div>
+                <div class="card">
+                    <h2>C++</h2>
+                    <p>(Advanced)</p>
+                </div>
+                <div class="card">
+                    <h2>Data Structure</h2>
+                    <p>(Advanced)</p>
+                </div>
+                <div class="card">
+                    <h2>HTML</h2>
+                    <p>(ADVANCE)</p>
+                </div>
+                <div class="card">
+                    <h2>CSS</h2>
+                    <p>(ADVANCE)</p>
+                </div>
+                <div class="card">
+                    <h2>JS</h2>
+                    <p>(Intermediate)</p>
+                </div>
+                <div class="card">
+                    <h2>BootStrap</h2>
+                    <p>(Beginner)</p>
+                </div>
+                <div class="card">
+                    <h2>Java</h2>
+                    <p>(Intermediate)</p>
+                </div>
+                <div class="card">
+                    <h2>Python</h2>
+                    <p>(Intermediate)</p>
+                </div>
+            </div>
+        </div>
+    </section>          
+    <br>
+    <div class="container">
+        <h1 class="section-heading">Contact <span>Me</span></h1>
+        <p>For all enquiries, please contact me using the form below</p>
+        <div class="card-wrapper">
+            <div class="card">
+                <h2>Call Me On</h2>
+                <h6>+91 90140 75836</h6>
+            </div>
+            <br>
+            <div class="card">
+                <h2>Email Me At</h2>
+                <h6>srikanthreddynandireddy@gmail.com</h6>
+                <br>
+            </div>
+            <div class="card">
+                <h2>Address</h2>
+                <h6>Hyderabad</h6>
+            </div>
+            <br>
+        </div>
+        <div class="input-wrap">
+            <input type="text" placeholder="Your Name *">
+            <input type="email" placeholder="Your Email*">
+        </div>
+        <div class="input-wrap-2">
+            <input type="text" placeholder="Your Subject...">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message..."></textarea>
+        </div>
+        <div class="btn-wrapper">
+            <button class="btn btn-primary">Send Message</button>
+        </div>
+    </div>
+</section>
 </body>
 </html>
